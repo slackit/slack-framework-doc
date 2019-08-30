@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>README · Slack Framework</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Laravel Slack SDK"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="README · Slack Framework"/><meta property="og:type" content="website"/><meta property="og:url" content="https://slackit.github.io/slack-framework-doc/"/><meta property="og:description" content="## Laravel Slack SDK"/><meta property="og:image" content="https://slackit.github.io/slack-framework-doc/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://slackit.github.io/slack-framework-doc/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/slack-framework-doc/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/slack-framework-doc/js/scrollSpy.js"></script><link rel="stylesheet" href="/slack-framework-doc/css/main.css"/><script src="/slack-framework-doc/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/slack-framework-doc/"><img class="logo" src="/slack-framework-doc/img/favicon.ico" alt="Slack Framework"/><h2 class="headerTitleWithLogo">Slack Framework</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/slack-framework-doc/docs/command_getting_started" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">README</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="laravel-slack-sdk"></a><a href="#laravel-slack-sdk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Laravel Slack SDK</h2>
+<p>A complete Slack SDK. Unlike other packages, this library provides Slack features as many as possible, everything comes in out of the box.</p>
+<p>Planned release date: 31/08/2019</p>
+<h2><a class="anchor" aria-hidden="true" id="private-pre-installation"></a><a href="#private-pre-installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(Private) Pre-installation</h2>
+<ol>
+<li>You have already set up the main project.</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="private-installation"></a><a href="#private-installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>(Private) Installation</h2>
+<p>This is a private repo, so the installation would be a bit different from public package.</p>
+<p>We need to set up a local Laravel package development environment.</p>
+<ol>
+<li>Install a helper package that quickly helps us set up a structure of package development in Laravel:</li>
+</ol>
+<pre><code class="hljs css language-bash">composer require jeroen-g/laravel-packager --dev
+</code></pre>
+<ol start="2">
+<li>Run the following artisan command to generate a folder structure for package development:</li>
+</ol>
+<pre><code class="hljs css language-bash">php artisan packager:new TimeHunter LaravelSlackSDK --i
+</code></pre>
+<p>Skip all questions.</p>
+<p>You should see a new <code>packages</code> folder created under project directory.</p>
+<ol start="3">
+<li>Go to <code>packages</code> folder and go to <code>TimeHunter</code> folder, delete the whole folder <code>LaravelSlackSDK</code></li>
+<li>Git clone the project:
+<code>git clone https://github.com/RyanDaDeng/laravel-slack-sdk.git LaravelSlackSDK</code></li>
+<li>Add <code>/packages</code> into your project <code>.gitignore</code> file</li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="set-up"></a><a href="#set-up" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set up</h2>
+<p>run:</p>
+<pre><code class="hljs css language-bash">php artisan vendor:publish --tag=slacksdk.config --force
+</code></pre>
+<h1><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h1>
+<h2><a class="anchor" aria-hidden="true" id="command"></a><a href="#command" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Command</h2>
+<h3><a class="anchor" aria-hidden="true" id="single-command"></a><a href="#single-command" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Single Command</h3>
+<pre><code class="hljs css language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">TimeHunter</span>\<span class="hljs-title">LaravelSlackSDK</span>\<span class="hljs-title">Services</span>\<span class="hljs-title">Command</span>\<span class="hljs-title">Contracts</span>\<span class="hljs-title">AbstractSlackCommand</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">TimeHunter</span>\<span class="hljs-title">LaravelSlackSDK</span>\<span class="hljs-title">Services</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Messages</span>\<span class="hljs-title">SlackAttachment</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">TimeHunter</span>\<span class="hljs-title">LaravelSlackSDK</span>\<span class="hljs-title">Services</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Messages</span>\<span class="hljs-title">SlackMessage</span>;
+
+<span class="hljs-comment">/**
+ * Class SimpleCommand
+ * <span class="hljs-doctag">@package</span> App\Slack\Commands
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SimpleCommand</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractSlackCommand</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@var</span> string $description
+     */</span>
+    <span class="hljs-keyword">protected</span> $description = <span class="hljs-string">'Hello Slack - command description'</span>;
+
+    <span class="hljs-comment">/**
+     * Your extra command validation logic
+     * <span class="hljs-doctag">@return</span> bool
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validate</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@return</span> mixed|void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// Respond to slack command payload response_url</span>
+        <span class="hljs-keyword">$this</span>-&gt;respondToSlack(<span class="hljs-string">'Hello, Slack!'</span>);
+
+        <span class="hljs-comment">// An instant response</span>
+        <span class="hljs-keyword">return</span> SlackMessage::create()-&gt;withAttachment(SlackAttachment::create()
+            -&gt;setInfoColor()
+            -&gt;setText(<span class="hljs-string">'Greeting payload message'</span>)
+            -&gt;setFallback(<span class="hljs-string">'Greeting payload message'</span>)
+        )-&gt;toArray();
+    }
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="group-command"></a><a href="#group-command" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Group Command</h3>
+<pre><code class="hljs css language-php"><span class="hljs-keyword">use</span> <span class="hljs-title">TimeHunter</span>\<span class="hljs-title">LaravelSlackSDK</span>\<span class="hljs-title">Services</span>\<span class="hljs-title">Command</span>\<span class="hljs-title">SlackGroupCommandProcessor</span>;
+
+<span class="hljs-comment">/**
+ * Class SimpleGroupCommand
+ * <span class="hljs-doctag">@package</span> App\Slack\Commands
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SimpleGroupCommand</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">SlackGroupCommandProcessor</span>
+</span>{
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@var</span> array $commands
+     */</span>
+    <span class="hljs-keyword">protected</span> $commands = [
+        <span class="hljs-string">'hello'</span> =&gt; SimpleCommand::class
+    ];
+
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="interactive-manager"></a><a href="#interactive-manager" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interactive Manager</h3>
+<pre><code class="hljs css language-php">
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LeaveInteractiveManager</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">InteractiveManager</span>
+</span>{
+
+    <span class="hljs-keyword">protected</span> $dialogSubmissions = [
+        LeaveFormSubmission::class
+    ];
+
+    <span class="hljs-keyword">protected</span> $blockActions = [
+        LeaveApprovedAction::class,
+        LeaveDeclinedAction::class,
+        LeaveRedoAction::class
+    ];
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="interactive-action"></a><a href="#interactive-action" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interactive Action</h3>
+<pre><code class="hljs css language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LeaveRedoAction</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractInteractive</span>
+</span>{
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@return</span> bool
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">validate</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    }
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@return</span> \Illuminate\Http\JsonResponse|mixed
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handle</span><span class="hljs-params">()</span>
+    </span>{
+
+        <span class="hljs-keyword">return</span> Response::json([], <span class="hljs-number">200</span>);
+    }
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#laravel-slack-sdk">Laravel Slack SDK</a></li><li><a href="#private-pre-installation">(Private) Pre-installation</a></li><li><a href="#private-installation">(Private) Installation</a></li><li><a href="#set-up">Set up</a></li><li><a href="#command">Command</a><ul class="toc-headings"><li><a href="#single-command">Single Command</a></li><li><a href="#group-command">Group Command</a></li><li><a href="#interactive-manager">Interactive Manager</a></li><li><a href="#interactive-action">Interactive Action</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/slack-framework-doc/" class="nav-home"><img src="/slack-framework-doc/img/favicon.ico" alt="Slack Framework" width="66" height="58"/></a><div><h5>Docs</h5><a href="/slack-framework-doc/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/slack-framework-doc/docs/en/doc2.html">Guides (or other categories)</a><a href="/slack-framework-doc/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/slack-framework-doc/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/slack-framework-doc/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/slack-framework-doc/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>

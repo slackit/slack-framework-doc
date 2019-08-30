@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Group Command · Slack Framework</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&gt; Make sure you have completed `Slack Command - Hello World` section before start reading this section."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Group Command · Slack Framework"/><meta property="og:type" content="website"/><meta property="og:url" content="https://slackit.github.io/slack-framework-doc/"/><meta property="og:description" content="&gt; Make sure you have completed `Slack Command - Hello World` section before start reading this section."/><meta property="og:image" content="https://slackit.github.io/slack-framework-doc/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://slackit.github.io/slack-framework-doc/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/slack-framework-doc/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/slack-framework-doc/js/scrollSpy.js"></script><link rel="stylesheet" href="/slack-framework-doc/css/main.css"/><script src="/slack-framework-doc/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/slack-framework-doc/"><img class="logo" src="/slack-framework-doc/img/favicon.ico" alt="Slack Framework"/><h2 class="headerTitleWithLogo">Slack Framework</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/slack-framework-doc/docs/command_getting_started" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Slack Command</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul class=""><li class="navListItem"><a class="navItem" href="/slack-framework-doc/docs/command_getting_started">Command Getting Started</a></li><li class="navListItem"><a class="navItem" href="/slack-framework-doc/docs/app_info_set_up">Slack App Setup</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Slack Command</h3><ul class=""><li class="navListItem"><a class="navItem" href="/slack-framework-doc/docs/command_hello_world">Single Command - Hello World!</a></li><li class="navListItem"><a class="navItem" href="/slack-framework-doc/docs/command_middleware">Signature Verify Middleware</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/slack-framework-doc/docs/command_group">Group Command</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Slack Helper</h3><ul class=""><li class="navListItem"><a class="navItem" href="/slack-framework-doc/docs/helper">Example Page</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Group Command</h1></header><article><div><span><blockquote>
+<p>Make sure you have completed <code>Slack Command - Hello World</code> section before start reading this section.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="what-is-group-command"></a><a href="#what-is-group-command" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What is Group Command?</h2>
+<p>The Group Command is a collection of single commands that you can define as many as you want.</p>
+<p>For example, you want to have more than 10 slack commands. In traditional way, you are required to create 10+ commands in Slack website which you may find its time consuming. The end user may experience hard time to remember all the commands.</p>
+<p>The Group Command is a solution that help you combine all commands into just one Slack Command.</p>
+<h2><a class="anchor" aria-hidden="true" id="sample-use-case"></a><a href="#sample-use-case" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample Use Case</h2>
+<p>Let's assume we want to implement the following commands:</p>
+<pre><code class="hljs">- Hello World command which prints 'Hello World!'
+- Hello Slack command which prints 'Hello Slack!'
+</code></pre>
+<p>If we implement them by using Single Command, we may have two commands defined as below:</p>
+<pre><code class="hljs">/hello-world
+/hello-slack
+</code></pre>
+<p>What if we want to call them via just one Slack Command as like:</p>
+<pre><code class="hljs">/hello-bot
+</code></pre>
+<p>and the usage could be:</p>
+<pre><code class="hljs">/hello-bot world
+/hello-bot slack
+</code></pre>
+<p>Yes, this is what exactly the Group Command can help you achieve it.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-group-command"></a><a href="#create-group-command" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create Group Command</h2>
+<ol>
+<li><p>Firstly, let's define two more properties in the Hello World command class:</p>
+<pre><code class="hljs css language-php">    <span class="hljs-comment">/**
+     * Class SimpleCommand
+     * <span class="hljs-doctag">@package</span> App\Slack\Commands
+     */</span>
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorldSlackCommand</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">AbstractSlackCommand</span>
+    </span>{
+       ...
+        <span class="hljs-comment">/**
+         * <span class="hljs-doctag">@var</span> string $description
+         */</span>
+        <span class="hljs-keyword">protected</span> $description = <span class="hljs-string">'print Hello World'</span>;
+    
+        <span class="hljs-comment">/**
+         * <span class="hljs-doctag">@var</span> string $name
+         */</span>
+        <span class="hljs-keyword">protected</span> $commandName = <span class="hljs-string">'world'</span>;
+       ...
+    }
+</code></pre>
+<blockquote>
+<p><code>$commandName</code> and <code>$description</code> are used to define your command signature and details.</p>
+</blockquote>
+<blockquote>
+<p>It's important to ensure that <code>$commandName</code> is always unique. This property is a map key that used to let system know what command is being triggered.</p>
+</blockquote></li>
+<li><p>Create your Group Command class:</p>
+<pre><code class="hljs css language-php">    <span class="hljs-keyword">use</span> <span class="hljs-title">Slackit</span>\<span class="hljs-title">LaravelSlackSDK</span>\<span class="hljs-title">Services</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Command</span>\<span class="hljs-title">SlackGroupCommandProcessor</span>;
+    
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloBotGroupCommand</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">SlackGroupCommandProcessor</span>
+    </span>{
+        <span class="hljs-comment">/**
+         * Define your commands
+         * <span class="hljs-doctag">@var</span> array $commands
+         */</span>
+        <span class="hljs-keyword">protected</span> $commands = [
+            HelloWorldCommand::class,
+            HelloSlackCommand::class,
+        ];
+     
+        <span class="hljs-comment">/**
+         * Check if the user can access the command
+         * <span class="hljs-doctag">@return</span> bool
+         */</span>
+        <span class="hljs-keyword">protected</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">authorize</span><span class="hljs-params">()</span>
+        </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+        }
+        
+    }
+</code></pre></li>
+<li><p>Create a controller function</p>
+<pre><code class="hljs css language-php">
+ <span class="hljs-comment">/**
+  * <span class="hljs-doctag">@param</span> HelloBotGroupCommand $helloBotGroupCommand
+  * <span class="hljs-doctag">@return</span> mixed|string
+  */</span>
+ <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">helloBot</span><span class="hljs-params">(HelloBotGroupCommand $helloBotGroupCommand)</span>
+ </span>{
+     <span class="hljs-keyword">return</span> $helloBotGroupCommand-&gt;execute();
+ }
+
+</code></pre></li>
+<li><p>Register a route.</p></li>
+<li><p>Done!</p></li>
+</ol>
+<blockquote>
+<p>:) Try to call <code>/hello-bot</code>, <code>/hello-bot world</code> and <code>/hello-bot slack</code> to see what the result is.</p>
+</blockquote>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/slack-framework-doc/docs/command_middleware"><span class="arrow-prev">← </span><span>Signature Verify Middleware</span></a><a class="docs-next button" href="/slack-framework-doc/docs/helper"><span>Example Page</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#what-is-group-command">What is Group Command?</a></li><li><a href="#sample-use-case">Sample Use Case</a></li><li><a href="#create-group-command">Create Group Command</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/slack-framework-doc/" class="nav-home"><img src="/slack-framework-doc/img/favicon.ico" alt="Slack Framework" width="66" height="58"/></a><div><h5>Docs</h5><a href="/slack-framework-doc/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/slack-framework-doc/docs/en/doc2.html">Guides (or other categories)</a><a href="/slack-framework-doc/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/slack-framework-doc/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/slack-framework-doc/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/slack-framework-doc/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>
