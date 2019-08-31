@@ -7,7 +7,7 @@
     <link rel="alternate" href="https://slackframework.com/blog"/>
     <subtitle>The best place to stay up-to-date with the latest Slack Framework news and events.</subtitle>
     <logo>https://slackframework.com/img/logo.png</logo>
-    <rights>Copyright © 2019 Your Name or Your Company Name</rights>
+    <rights>Copyright © 2019 Slack Framework</rights>
     <entry>
         <title type="html"><![CDATA[New Version 1.0.0]]></title>
         <id>https://slackframework.com/blog/2017/10/24/new-version-1.0.0.html</id>
